@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-	var btn = document.getElementById("heartTxt");
+	var btn = document.getElementById("heartButtonsWrapper");
 	btn.style.opacity = 0;
 	var btnVal = 0;
 
