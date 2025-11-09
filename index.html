@@ -21,10 +21,16 @@
 	<img id="img" src="">
 </div>
 
-<div id="heartTxt">
-	<span id="clickMe">Click!</span>
-	<div id="heart">
-		<button id="button" onclick="play()"></button>
+<!-- HEART BUTTONS (SIDE BY SIDE) -->
+<div id="heartButtonsWrapper">
+	<div class="heartBlock">
+		<span class="heartLabel">Click!</span>
+		<button id="button" onclick="play()" class="heartBtn"></button>
+	</div>
+
+	<div class="heartBlock">
+		<span class="heartLabel">Letter</span>
+		<button class="heartBtn" onclick="window.open('https://brk-kappa.vercel.app/', '_blank')"></button>
 	</div>
 </div>
 
