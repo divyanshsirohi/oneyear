@@ -113,14 +113,104 @@
 	height: 50%;
 }
 
-#img{
+#img {
 	display: block;
+	margin: auto;
+	max-width: 65vw;   /* keeps it nicely sized horizontally */
+	max-height: 55vh;  /* stops it from swallowing the screen */
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: 12px; /* optional, looks more premium */
+}
+
+/* Second Heart Button */
+#letterTxt {
+	position: absolute;
+	display: table;
+	top: 68%;
 	left: 0;
 	right: 0;
 	margin: auto;
-	width: auto;
+	width: 10%;
+	height: 8%;
+	text-align: center;
+}
+
+#openLetterText {
+	display: inline-block;
+	font-size: 16px;
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+
+#letterHeart {
+	width: 100%;
 	height: 100%;
 }
+
+#letterButton {
+	background-image: url("../pic/love.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	background-position: center;
+	transition: 0.1s;
+	width: 100%;
+	height: 100%;
+}
+
+#letterButton:active {
+	width: 92%;
+	height: 92%;
+}
+
+/* Modal */
+#letterModal {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	backdrop-filter: blur(6px);
+}
+
+#letterContent {
+	background: rgba(255, 255, 255, 0.18);
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+	border-radius: 12px;
+	width: 80%;
+	max-width: 500px;
+	padding: 20px;
+	color: white;
+	margin: 10% auto;
+	text-align: left;
+	font-size: 17px;
+	line-height: 1.5;
+	position: relative;
+}
+
+#closeLetter {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	font-size: 28px;
+	cursor: pointer;
+	color: white;
+	transition: 0.2s;
+}
+
+#closeLetter:hover {
+	color: #ffb3c6;
+}
+
 
 #Txt{
 	display: inline-block;

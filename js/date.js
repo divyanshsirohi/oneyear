@@ -1,51 +1,51 @@
-
-var dv = document.getElementById("content");
+// Fade-in Setup
+const dv = document.getElementById("content");
 dv.style.opacity = 0;
-var val = 0;
+let val = 0;
 
-function timer(){
-	var start = new Date(2018, 0, 27, 20, 53);
-	var t = new Date() - start;
-	var d = Math.floor(t / 1000 / 60 / 60 / 24);
-	var h = Math.floor(t / 1000 / 60 / 60 % 24);
-	if(h < 10){
-		h = "0" + h;
-	}
-	var m = Math.floor(t / 1000 / 60 % 60);
-	if(m < 10){
-		m = "0" + m;
-	}
-	var s = Math.floor(t / 1000 % 60);
-	if(s < 10){
-		s = "0" + s;
-	}
+// Relationship Start Date (10 Nov 2024)
+const startDate = new Date(2024, 10, 10, 0, 0, 0); // Month index: 0 = Jan, so 10 = Nov
+
+function timer() {
+	const t = new Date() - startDate;
+
+	const d = Math.floor(t / (1000 * 60 * 60 * 24));
+	let h = Math.floor(t / (1000 * 60 * 60) % 24);
+	let m = Math.floor(t / (1000 * 60) % 60);
+	let s = Math.floor(t / 1000 % 60);
+
+	// Leading zeros for clean UI
+	h = h.toString().padStart(2, "0");
+	m = m.toString().padStart(2, "0");
+	s = s.toString().padStart(2, "0");
+
 	document.getElementById("d").innerHTML = d;
 	document.getElementById("h").innerHTML = h;
 	document.getElementById("m").innerHTML = m;
 	document.getElementById("s").innerHTML = s;
 }
 
-function fadein(){
-	if(val < 1){
+function fadein() {
+	if (val < 1) {
 		val += 0.025;
 		dv.style.opacity = val;
-	}
-	else{
+	} else {
 		clearInterval(fadeinInterval);
-		if(ok == 2){
-			ok += 1;
-		}
+		if (ok === 2) ok++;
 	}
 }
 
-var fadeInterval;
-var fadeinInterval;
+let fadeInterval;
+let fadeinInterval;
 
+// Initialize Timer
 timer();
 setInterval(timer, 1000);
-fadeInterval = setInterval(function(){
-	if(ok == 2){
+
+// Trigger Fade-In
+fadeInterval = setInterval(() => {
+	if (ok === 2) {
 		clearInterval(fadeInterval);
 		fadeinInterval = setInterval(fadein, 50);
 	}
-}, 50)
+}, 50);
